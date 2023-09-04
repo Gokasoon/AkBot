@@ -63,6 +63,7 @@ nb_Stage_Finished = 0
 # functions
 
 def click_terminal():
+    time.sleep(2)
     if pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8) != None:
         pyautogui.click(pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8))
     time.sleep(1)
