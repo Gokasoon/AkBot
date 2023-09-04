@@ -813,7 +813,7 @@ for i, filename in enumerate(os.listdir(img_folder)):
         image = Image.open(img_path)
         image.thumbnail((100, 100))  # Resize image if needed
         photo = ImageTk.PhotoImage(image)
-        button = ctk.CTkButton(frame, image=photo, command=button_functions[i], text="")
+        button = ctk.CTkButton(frame, image=photo, command=button_functions[i-1], text="")
         button.image = photo
         button_images.append(button)
 
