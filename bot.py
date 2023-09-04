@@ -56,12 +56,15 @@ print(pyautogui.position())
 #                 break
             
             
+
 nb_Stage_Finished = 0
 
 
 # functions
 
 def farm_orirock_cube():
+    
+    global nb_Stage_Finished
     
     if pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8) != None:
         pyautogui.click(pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8))
@@ -148,6 +151,8 @@ def farm_orirock_cube():
     
     
 def farm_loxic_kohl():
+    
+    global nb_Stage_Finished
     
     if pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8) != None:
         pyautogui.click(pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8))
@@ -240,6 +245,8 @@ def farm_loxic_kohl():
 
 def farm_rma70_12():
     
+    global nb_Stage_Finished
+    
     if pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8) != None:
         pyautogui.click(pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8))
     
@@ -325,6 +332,8 @@ def farm_rma70_12():
 
 
 def farm_manganese_ore():
+    
+    global nb_Stage_Finished
     
     if pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8) != None:
         pyautogui.click(pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8))
@@ -417,6 +426,8 @@ def farm_manganese_ore():
 
 def farm_grindstone():
     
+    global nb_Stage_Finished
+    
     if pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8) != None:
         pyautogui.click(pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8))
     
@@ -507,6 +518,8 @@ def farm_grindstone():
 
 
 def farm_coagulating_gel():
+    
+    global nb_Stage_Finished
     
     if pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8) != None:
         pyautogui.click(pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8))
@@ -599,6 +612,8 @@ def farm_coagulating_gel():
 
 def farm_sugar_pack():
     
+    global nb_Stage_Finished
+    
     if pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8) != None:
         pyautogui.click(pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8))
     
@@ -684,6 +699,8 @@ def farm_sugar_pack():
 
         
 def farm_oriron_cluster():
+    
+    global nb_Stage_Finished
     
     if pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8) != None:
         pyautogui.click(pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8))
