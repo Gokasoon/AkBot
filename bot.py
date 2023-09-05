@@ -60,28 +60,39 @@ print(pyautogui.position())
 nb_Stage_Finished = 0
 
 
-# functions
+# functions67
+
+def go_main_menu():
+    time.sleep(5)
+    if pyautogui.locateOnScreen('./img/home.png', region=(50, 310, 240, 200), confidence=0.8) != None:
+        pyautogui.click(pyautogui.locateOnScreen('./img/home.png', region=(50, 310, 240, 200), confidence=0.8))
+        time.sleep(2)
+    elif pyautogui.locateOnScreen('./img/house.png', region=(245, 12, 330, 150), confidence=0.8) != None:
+        pyautogui.click(pyautogui.locateOnScreen('./img/house.png', region=(245, 12, 330, 150), confidence=0.8))
+        time.sleep(1.5)
+        if pyautogui.locateOnScreen('./img/home.png', region=(50, 310, 240, 200), confidence=0.8) != None:
+            pyautogui.click(pyautogui.locateOnScreen('./img/home.png', region=(50, 310, 240, 200), confidence=0.8))
+            time.sleep(2)
 
 def click_terminal():
-    time.sleep(2)
-    if pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8) != None:
-        pyautogui.click(pyautogui.locateOnScreen('./img/terminal.png', region=(1350, 182, 225, 110), confidence=0.8))
+    if pyautogui.locateOnScreen('./img/terminal.png', region=(1275, 150, 320, 200), confidence=0.6) != None:
+        pyautogui.click(pyautogui.locateOnScreen('./img/terminal.png', region=(1275, 150, 320, 200), confidence=0.6))
     time.sleep(1)
     
     
 def click_main_stage():
-    if pyautogui.locateOnScreen('./img/main_stage.png', region=(265, 975, 135, 60), confidence=0.8) != None:
-        pyautogui.click(pyautogui.locateOnScreen('./img/main_stage.png', region=(265, 975, 135, 60), confidence=0.8)) 
+    if pyautogui.locateOnScreen('./img/main_stage.png', region=(300, 900, 135, 150), confidence=0.6) != None:
+        pyautogui.click(pyautogui.locateOnScreen('./img/main_stage.png', region=(300, 900, 135, 150), confidence=0.6)) 
     time.sleep(1)
     
     
 def go_ep1():
-    if pyautogui.locateOnScreen('./img/act0.png', region=(160, 112, 100, 30), confidence=0.8) != None:
-        pyautogui.click(pyautogui.locateOnScreen('./img/act0.png', region=(160, 112, 100, 30), confidence=0.8))
+    if pyautogui.locateOnScreen('./img/act0.png', region=(160, 100, 200, 200), confidence=0.4) != None:
+        pyautogui.click(pyautogui.locateOnScreen('./img/act0.png', region=(160, 100, 200, 200), confidence=0.4))
     time.sleep(1)
     
-    if pyautogui.locateOnScreen('./img/episode1.png', region=(330, 500, 1400, 750), confidence=0.8) != None:
-        pyautogui.click(pyautogui.locateOnScreen('./img/episode1.png', region=(330, 500, 1400, 750), confidence=0.8))
+    if pyautogui.locateOnScreen('./img/episode1.png', region=(330, 500, 1400, 750), confidence=0.6) != None:
+        pyautogui.click(pyautogui.locateOnScreen('./img/episode1.png', region=(330, 500, 1400, 750), confidence=0.6))
     time.sleep(2)
     
     
@@ -158,6 +169,7 @@ def loop_until_no_sanity_remaining():
 
 def farm_orirock_cube():
     
+    go_main_menu()
     click_terminal()
     click_main_stage()
     go_ep1()
@@ -192,6 +204,7 @@ def farm_orirock_cube():
     
 def farm_loxic_kohl():
     
+    go_main_menu()
     click_terminal()
     click_main_stage()
     go_ep10()
@@ -226,6 +239,7 @@ def farm_loxic_kohl():
     
 def farm_rma70_12():
         
+    go_main_menu()
     click_terminal()
     click_main_stage()
     go_ep4()
@@ -259,7 +273,8 @@ def farm_rma70_12():
 
 
 def farm_manganese_ore():
-        
+   
+    go_main_menu()     
     click_terminal()
     click_main_stage()
     go_ep10()
@@ -293,7 +308,8 @@ def farm_manganese_ore():
     
 
 def farm_grindstone():
-        
+      
+    go_main_menu()  
     click_terminal()
     click_main_stage()
     go_ep10()
@@ -327,7 +343,8 @@ def farm_grindstone():
 
 
 def farm_coagulating_gel():
-        
+    
+    go_main_menu()
     click_terminal()
     click_main_stage()
     go_ep10()
@@ -362,6 +379,7 @@ def farm_coagulating_gel():
 
 def farm_sugar_pack():
         
+    go_main_menu()
     click_terminal()
     click_main_stage()
     go_ep4()
@@ -396,6 +414,7 @@ def farm_sugar_pack():
         
 def farm_oriron_cluster():
         
+    go_main_menu()
     click_terminal()
     click_main_stage()
     go_ep10()
