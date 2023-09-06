@@ -13,7 +13,6 @@ You need to install various modules using the following pip install commands:
 - keyboard
 - pyautogui
 - opencv-python
-- psutil
 
 # To start AkBot:
 
