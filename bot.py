@@ -60,7 +60,7 @@ print(pyautogui.position())
 nb_Stage_Finished = 0
 
 
-# functions67
+# functions
 
 def go_main_menu():
     time.sleep(5)
@@ -73,6 +73,7 @@ def go_main_menu():
         if pyautogui.locateOnScreen('./img/home.png', region=(50, 310, 240, 200), confidence=0.8) != None:
             pyautogui.click(pyautogui.locateOnScreen('./img/home.png', region=(50, 310, 240, 200), confidence=0.8))
             time.sleep(2)
+
 
 def click_terminal():
     if pyautogui.locateOnScreen('./img/terminal.png', region=(1275, 150, 320, 200), confidence=0.6) != None:
@@ -97,12 +98,12 @@ def go_ep1():
     
     
 def go_ep4():
-    if pyautogui.locateOnScreen('./img/act1.png', confidence=0.8) != None:
-        pyautogui.click(pyautogui.locateOnScreen('./img/act1.png', confidence=0.8))
+    if pyautogui.locateOnScreen('./img/act1.png', confidence=0.7) != None:
+        pyautogui.click(pyautogui.locateOnScreen('./img/act1.png', confidence=0.7))
     time.sleep(1)
             
-    if pyautogui.locateOnScreen('./img/episode4.png', confidence=0.8) != None:
-        pyautogui.click(pyautogui.locateOnScreen('./img/episode4.png', confidence=0.8))
+    if pyautogui.locateOnScreen('./img/episode4.png', confidence=0.5) != None:
+        pyautogui.click(pyautogui.locateOnScreen('./img/episode4.png', confidence=0.5))
     time.sleep(2)
     
     
