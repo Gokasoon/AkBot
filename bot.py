@@ -1,6 +1,5 @@
 import pyautogui
 import time
-import psutil 
 import keyboard
 import customtkinter as ctk
 from tkinter import PhotoImage
@@ -10,52 +9,6 @@ import os
 
 print(pyautogui.size())
 print(pyautogui.position())
-
-# # check if ak is running ( only check bluestacks )
-# bluestacks_status = False
-
-# for process in psutil.process_iter():
-#     if process.name() == "HD-Player.exe":
-#         print("Bluestacks is running")
-#         bluestacks_status = True
-#         break
-
-
-# # disable web search in Start on Windows 11, open Group Policy (gpedit.msc) > User Configuration 
-# # > Administrative Templates > Windows Components > File Explorer, open and enable the 
-# # “Turn off display of recent search entries in the File Explorer search box” policy.
-
-# if bluestacks_status == False:
-#     pyautogui.press('win')
-#     pyautogui.typewrite('Arknights')
-#     pyautogui.press('enter')  
-#     time.sleep(8) # wait for arknights to load
-#     pyautogui.press('f11') # fullscreen
-    
-#     while bluestacks_status == False:
-        
-#         if pyautogui.locateOnScreen('start_menu.png', region=(850, 962, 220, 110), confidence=0.8) != None:
-#             pyautogui.click(pyautogui.locateOnScreen('start_menu.png', region=(850, 962, 220, 110), confidence=0.8))
-            
-#         if pyautogui.locateOnScreen('start_button.png', region=(880, 737, 160, 50), confidence=0.8) != None:
-#             pyautogui.click(pyautogui.locateOnScreen('start_button.png', region=(880, 737, 160, 50), confidence=0.8))
-            
-#         if pyautogui.locateOnScreen('terminal.png') != None:
-#             bluestacks_status = True
-    
-    
-    
-# start at main menu
-
-# select how many potions to use
-# while True:
-#         restore_potions = input("How many potions to use? ")
-#         if restore_potions.isdigit() == True:
-#             restore_potions = int(restore_potions)
-#             if restore_potions >= 0:
-#                 break
-            
-            
 
 nb_Stage_Finished = 0
 
@@ -79,13 +32,28 @@ def click_terminal():
     if pyautogui.locateOnScreen('./img/terminal.png', region=(1275, 150, 320, 200), confidence=0.6) != None:
         pyautogui.click(pyautogui.locateOnScreen('./img/terminal.png', region=(1275, 150, 320, 200), confidence=0.6))
     time.sleep(1)
+
+
+def go_yato_event():
+    locations = list(pyautogui.locateAllOnScreen('./img/yato_event.png', confidence=0.8))
+    if locations:
+        x, y, width, height = locations[0]
+        pyautogui.click(x + width / 2, y + height / 2)
+    time.sleep(4)
     
     
 def click_main_stage():
     if pyautogui.locateOnScreen('./img/main_stage.png', region=(300, 900, 135, 150), confidence=0.6) != None:
         pyautogui.click(pyautogui.locateOnScreen('./img/main_stage.png', region=(300, 900, 135, 150), confidence=0.6)) 
     time.sleep(1)
+
+
+def go_yato_stage():
+    if pyautogui.locateOnScreen('./img/yato_stage.png', confidence=0.8) != None:
+        pyautogui.click(pyautogui.locateOnScreen('./img/yato_stage.png', confidence=0.8)) 
+    time.sleep(1)
     
+     
     
 def go_ep1():
     if pyautogui.locateOnScreen('./img/act0.png', region=(160, 100, 200, 200), confidence=0.4) != None:
@@ -445,8 +413,21 @@ def farm_oriron_cluster():
                         stage_found = True
         
     start_stage()
-    loop_until_no_sanity_remaining()  
-        
+    loop_until_no_sanity_remaining() 
+    
+    
+def farm_yato_stage():
+    
+    go_main_menu()
+    go_yato_event()
+    go_yato_stage()
+    
+    if pyautogui.locateOnScreen('./img/cf-8.png', confidence=0.8) != None:
+        pyautogui.click(pyautogui.locateOnScreen('./img/cf-8.png', confidence=0.8)) 
+    time.sleep(1)
+    
+    start_stage()
+    loop_until_no_sanity_remaining() 
         
        
 # GUI        
@@ -460,7 +441,8 @@ button_functions = [
     farm_orirock_cube,
     farm_oriron_cluster,
     farm_rma70_12,
-    farm_sugar_pack
+    farm_sugar_pack,
+    farm_yato_stage
 # Define function for each button
 ]
 
@@ -482,7 +464,7 @@ button_images = []
 img_folder = "./img/buttons"
 
 for i, filename in enumerate(os.listdir(img_folder)):
-    if filename.endswith((".webp")):
+    if filename.endswith((".webp", ".png")):
         img_path = os.path.join(img_folder, filename)
         image = Image.open(img_path)
         image.thumbnail((100, 100))  # Resize image if needed
@@ -491,9 +473,9 @@ for i, filename in enumerate(os.listdir(img_folder)):
         button.image = photo
         button_images.append(button)
 
-# Arrange buttons in a grid layout (2 rows, 4 columns)
+# Arrange buttons in a grid layout (3 rows, 3 columns)
 for i, button in enumerate(button_images):
-    row_num, col_num = divmod(i, 4)
+    row_num, col_num = divmod(i, 3)
     button.grid(row=row_num, column=col_num, padx=10, pady=10)
 
 root.mainloop()
