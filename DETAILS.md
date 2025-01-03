@@ -1,4 +1,4 @@
-# AkBot Details
+# AkBot
 
 AkBot is an automated farming bot for the game Arknights. It helps players farm various materials by automating the in-game actions required to complete stages.
 
